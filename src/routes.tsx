@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
 import { RoutesUrl } from './routes-url'
+import UserList from './pages/user-list'
+import UserDetails from './pages/user-details'
 
 
 export function RouteProvider() {
@@ -10,15 +12,11 @@ export function RouteProvider() {
         },
         {
             path: RoutesUrl.BASE_URL,
-            element: <h1>base</h1>
+            element: <UserList />
         },
         {
-            path: RoutesUrl.USER_LIST,
-            element: <h1>List</h1>
-        },
-        {
-            path: RoutesUrl.USER_DETAILS,
-            element: <h1>details</h1>
+            path: `${RoutesUrl.USER_DETAILS}:id`,
+            element: <UserDetails />
         },
     ]
 
